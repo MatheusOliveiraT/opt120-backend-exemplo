@@ -35,4 +35,28 @@ router.get('/', usuarioController.listarUsuarios);
  */
 router.post('/', usuarioController.criarUsuario);
 
+/**
+ * @swagger
+ * /usuarios/{id}:
+ *   get:
+ *     summary: Busca um usuário por ID
+ */
+router.get('/:id', usuarioController.buscarUsuarioPorId);
+
+/**
+ * @swagger
+ * /usuarios/{id}:
+ *   put:
+ *     summary: Atualiza um usuário
+ */
+router.put('/:id', usuarioController.atualizarUsuario);
+
+/**
+ * @swagger
+ * /usuarios/{id}:
+ *   delete:
+ *     summary: Remove um usuário
+ */
+router.delete('/:id', usuarioController.deletarUsuario);
+
 module.exports = router;

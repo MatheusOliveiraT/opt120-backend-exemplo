@@ -2,11 +2,15 @@ const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const swaggerSpec = require('./config/swagger');
 const usuarioRoutes = require('./routes/usuarioRoutes');
+const cors = require('cors');
 
 const app = express();
 
 // Middlewares
 app.use(express.json());
+
+// CORS
+app.use(cors()); 
 
 // Documentação
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
